@@ -6,9 +6,9 @@ public class pi{
 
 	public static void menu(){
 	
-		System.out.println("Metodo 1 Suma de inversos enteros positivos	[1]");
-		System.out.println("Metodo 2 Suma de impares			[2]");
-		System.out.println("3 Producto de Wallis 			[3]");
+		System.out.println("Metodo 1 Suma de inversos enteros positivos[1]");
+		System.out.println("Metodo 2 Suma de impares					[2]");
+		System.out.println("3 Producto de Wallis 						[3]");
 	}
 
 	
@@ -117,13 +117,15 @@ public class pi{
     double denom = 0;
     double num = 0;
     double temp = 0;
-    double countador = 0;
+    double contador = 0;
     double pimedios = 1;
     Scanner in;
     in = new Scanner(System.in);
+    int termino;
+    double resultado;
 
 		System.out.println("Introduce el numero de terminos");
-		
+		termino=in.nextInt();
 
         while(true) {
           temp = b;
@@ -134,12 +136,17 @@ public class pi{
           num = a*a; 
 
           pimedios *= (num/denom);
-          countador++;
+          contador++;
+          
+          resultado=pimedios*2;
 
           System.out.println(pimedios*2);
+          
+          if(contador == termino){break;}
 		}
+	
 		
-		
+		return resultado;
 		}
 		
 		
@@ -151,16 +158,35 @@ public class pi{
 		int j;
 		Scanner entrada;
 		entrada = new Scanner(System.in);
+		int op;
 		
-		pi3();
+		do{
+		
+		menu();
+		
+		do{
+			System.out.println("Ingreasa un numero entero entre 1 y 3");
+			op=entrada.nextInt();
+			
+			}while(op>4);
 		
 		
+		
+		switch(op){
+			case 1: pi1(); break;
+			case 2: pi2(); break;
+			case 3: pi3(); break;
+			}
+		
+		
+	System.out.println("¿Otro metodo? Sí [1] No [2]");
+	int op2;
+	op=entrada.nextInt();
+
+	}while(op == 1);
 
 	}
 
 
 
-
 	}
-
-
